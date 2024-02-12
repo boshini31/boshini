@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Popup Example</title>
+	<style>
+		.popup {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+		}
+		.popup-content {
+			background-color: #fefefe;
+			margin: 15% auto;
+			padding: 20px;
+			border: 1px solid #888;
+			width: 30%;
+			border-radius: 5px;
+		}
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h2>Popup Example</h2>
+	<button id="open-popup">Open Popup</button>
+	<div class="popup" id="popup">
+		<div class="popup-content">
+			<span class="close">&times;</span>
+			<p>This is a popup message!</p>
+		</div>
+	</div>
+
+	<script>
+		var popup = document.getElementById("popup");
+		var openPopup = document.getElementById("open-popup");
+		var closePopup = document.getElementsByClassName("close")[0];
+
+		openPopup.addEventListener("click", function() {
+			popup.style.display = "block";
+		});
+
+		closePopup.addEventListener("click", function() {
+			popup.style.display = "none";
+		});
+	</script>
+</body>
+</html>
